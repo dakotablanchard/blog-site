@@ -9,12 +9,11 @@ router.post('/sign-up', async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
-
-    console.log('Before session save:', req.session);
+// Setting session user_id to the new users id and making the logged_in status true
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
       req.session.logged_in = true;
-    console.log('After session save:', req.session);
+
       res.json({ user: dbUserData, message: 'Successfully created account!' });
     });
   } catch (err) {
