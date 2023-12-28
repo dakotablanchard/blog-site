@@ -5,13 +5,15 @@ const goToDashboard = () => {
 const createPost = async (event) => {
     event.preventDefault();
 
+    const title = document.querySelector('#title').value
     const content = document.querySelector('#content').value
 
+    console.log(title, content)
 
-    if (content) {
+    if (title && content) {
         const response = await fetch('/api/blog-posts/create-post', {
           method: 'POST',
-          body: JSON.stringify({ content }),
+          body: JSON.stringify({ title, content }),
           headers: { 'Content-Type': 'application/json' },
         }); 
     
