@@ -2,12 +2,8 @@ const router = require('express').Router();
 const { User, Post } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
-  if (req.session.logged_in) {
+router.get('/', async (req, res) => {
     res.redirect('/home');
-    return;
-  }
-
 });
 
 router.get('/login', (req, res) => {
@@ -19,7 +15,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/home', withAuth, async (req, res) => {
+router.get('/home', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const postData = await Post.findAll({

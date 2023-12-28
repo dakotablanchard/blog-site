@@ -13,8 +13,8 @@
     <header>
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/home">Blog!</a>
-                <!-- Conditionally render logout link -->
+                <a class="navbar-brand" href="/home">BLOG!</a>
+                <button class="btn btn-primary" id="login-navbar">Login</button>
                 {{#if logged_in}}
                 <button class="btn btn-primary" id="new-post">New Post</button>
                 <button class="no-button btn btn-danger" id="logout">Logout</button>
@@ -31,6 +31,7 @@
     </footer>
 
 
+    <script src="/js/login.js"></script>
     <!-- Render script for logged in users only -->
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
