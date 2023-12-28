@@ -38,8 +38,18 @@ router.get('/home', async (req, res) => {
   }
 });
 
-router.get('/dashboard', withAuth, (req, res) => {
+router.get('/dashboard', withAuth,  async (req, res) => {
+
+  const userPostData = await Post.findAll({
+    where: {
+      user_id: req.session.user_id,
+    },
+  });
+
+  const userPosts = userPostData.map(post => post.get({ plain: true }));
+
   res.render('dashboard', {
+    userPosts,
     logged_in: req.session.logged_in
   })
 })
