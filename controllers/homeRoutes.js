@@ -44,7 +44,7 @@ router.get('/dashboard', withAuth, (req, res) => {
   })
 })
 
-router.get('/view-post/:id', async (req, res) => {
+router.get('/view-post/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
