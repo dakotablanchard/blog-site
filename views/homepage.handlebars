@@ -3,9 +3,9 @@
 <div class="card mx-auto" style="width: 75rem;">
   <div class="card-body">
     <div class="col-md-5">
-      <p>{{post.date_created}}</p>
       <p>{{post.content}}</p>
-      <p>Created by: {{post.user.name}}</p>
+      <p class="card-subtitle mb-2 text-body-secondary">Posted by: {{post.user.name}}</p>
+      <p class="card-subtitle mb-2 text-body-secondary">{{format_date post.date_created}}</p>
     </div>
   </div>
 </div>
