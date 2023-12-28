@@ -1,5 +1,5 @@
-const newPost = () => {
-    document.location.replace('/new-post')
+const goToDashboard = () => {
+    document.location.replace('/dashboard')
 }
 
 const createPost = async (event) => {
@@ -23,5 +23,5 @@ const createPost = async (event) => {
       }
 }
 
-const newPostBtn = document.querySelector('#new-post').addEventListener('click', newPost)
-const createPostBtn = document.querySelector('#create-post').addEventListener('click', createPost)
+document.querySelector('#dashboard').addEventListener('click', goToDashboard)
+document.querySelector('#create-post').addEventListener('click', createPost)

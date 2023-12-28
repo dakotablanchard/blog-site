@@ -38,8 +38,8 @@ router.get('/home', async (req, res) => {
   }
 });
 
-router.get('/new-post', withAuth, (req, res) => {
-  res.render('newPost', {
+router.get('/dashboard', withAuth, (req, res) => {
+  res.render('dashboard', {
     logged_in: req.session.logged_in
   })
 })
