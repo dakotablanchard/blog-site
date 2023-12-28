@@ -37,9 +37,7 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        console.log('Successful signup!');
         document.location.replace('/home');
-        console.log('After redirect');
       } else {
         alert(response.statusText);
       }
