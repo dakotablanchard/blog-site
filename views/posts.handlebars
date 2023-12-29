@@ -9,6 +9,17 @@
   </div>
 </div>
 
+{{#each post.comments as |comment| }}
+<div class="card mx-auto mt-3" style="width: 75rem;">
+  <div class="card-body">
+      <p>{{comment.comment}}</p>
+      <p class="card-subtitle mb-2 text-body-secondary">Posted by: {{comment.user.name}}</p>
+    </div>
+  </div>
+</div>
+{{/each}}
+
+
 <div class="card mx-auto mt-3" style="width: 75rem;">
   <div class="card-body">
     <form>

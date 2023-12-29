@@ -60,12 +60,23 @@ router.get('/view-post/:id', withAuth, async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['id','name'],
         },
+        {
+          model: Comment,
+          attributes: ['comment', 'date_created', 'post_id', 'user_id'],
+          include: [
+            {
+              model: User,
+              attributes: ['name'],
+            }
+          ]
+        }
       ],
     });
     
     const post = postData.get({ plain: true });
+    console.log(post)
     
     res.render('posts', {
       post,
