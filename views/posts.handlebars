@@ -12,10 +12,11 @@
 {{#each post.comments as |comment| }}
 <div class="card mx-auto mt-3" style="width: 75rem;">
   <div class="card-body">
-      <p>{{comment.comment}}</p>
-      <p class="card-subtitle mb-2 text-body-secondary">Posted by: {{comment.user.name}}</p>
-    </div>
+    <p>{{comment.comment}}</p>
+    <p class="card-subtitle mb-2 text-body-secondary">Posted by: {{comment.user.name}}</p>
+    <p class="card-subtitle mb-2 text-body-secondary">{{format_date comment.date_created}}</p>
   </div>
+</div>
 </div>
 {{/each}}
 
