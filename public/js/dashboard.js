@@ -25,5 +25,22 @@ const createPost = async (event) => {
       }
 }
 
+const editPost = (event) => {
+  event.preventDefault();
+
+  // Show the save button
+  document.getElementById('save-changes').style.display = 'block';
+
+  // Make the title and content editable
+  const postTitle = document.getElementById('post-title');
+  postTitle.contentEditable = true;
+
+  const postContent = document.getElementById('post-content');
+  postContent.contentEditable = true;
+
+  postContent.focus();
+}
+
 document.querySelector('#dashboard').addEventListener('click', goToDashboard)
 document.querySelector('#create-post').addEventListener('click', createPost)
+document.querySelector('#edit-post').addEventListener('click', editPost)

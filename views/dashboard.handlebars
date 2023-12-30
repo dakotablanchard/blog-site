@@ -5,12 +5,13 @@
       {{#each userPosts as |userPost|}}
         <div class="card mx-auto mt-3">
           <div class="card-body">
-            <h2><a href="/view-post/{{userPost.id}}">{{userPost.title}}</a></h2>
-            <p>{{userPost.content}}</p>
+            <h2><a href="/view-post/{{userPost.id}}" id="post-title">{{userPost.title}}</a></h2>
+            <p id="post-content">{{userPost.content}}</p>
             <p class="card-subtitle mb-2 text-body-secondary">{{format_date userPost.date_created}}
               <button class="btn btn-danger float-end ms-2" id="delete-post">Delete</button>
               <button class="btn btn-primary float-end ms-2" id="edit-post">Edit</button>
             </p>
+            <button class="btn btn-success" id="save-changes" style="display: none;">Save Changes</button>
           </div>
         </div>
       {{/each}}
