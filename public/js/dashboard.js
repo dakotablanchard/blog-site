@@ -26,7 +26,6 @@ const createPost = async (event) => {
 }
 
 const editPost = (postId) => {
-  // event.preventDefault();
 
   // Hide all "Save Changes" buttons
   const saveButtons = document.querySelectorAll('.save-changes');
@@ -48,8 +47,25 @@ const editPost = (postId) => {
   postContent.contentEditable = true;
 
   postContent.focus();
+
 }
 
+const saveChanges = async (postId) => {
+
+  const newTitle = document.getElementById(`post-title-${postId}`).innerText
+  const newContent = document.getElementById(`post-content-${postId}`).innerText
+  
+  const response = await fetch(`/api/blog-posts/update-post/${postId}`, {
+    method: 'PUT',
+    body: JSON.stringify({ newTitle, newContent }),
+    headers: { 'Content-Type': 'application/json' },
+  }); 
+
+  if (response.ok) {
+    document.location.reload();
+  } else {
+    alert(response.statusText);
+  }
+}
 document.querySelector('#dashboard').addEventListener('click', goToDashboard)
 document.querySelector('#create-post').addEventListener('click', createPost)
-// document.querySelector('#edit-post').addEventListener('click', editPost)

@@ -7,13 +7,6 @@ const createComment = async (event) => {
     
     const comment = document.querySelector('#comment').value
 
-    // const commentData = {
-    //     comment: comment,
-    //     post_id: postId
-    // }
-
-    // console.log(comment)
-
     if (comment && postId) {
         const response = await fetch('/api/blog-posts/create-comment', {
           method: 'POST',
