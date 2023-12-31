@@ -41,6 +41,26 @@ router.put('/update-post/:id', async (req, res) => {
   }
 })
 
+router.delete('/delete-post/:id', async (req, res) => {
+  try {
+    // Find the post by ID
+    const post = await Post.findByPk(req.params.id);
+
+    if (!post) {
+      // If the post is not found, return a 404 status
+      return res.status(404).json({ message: 'Post not found' });
+    }
+
+    // Delete the post
+    await post.destroy();
+
+    // Respond with a success message
+    res.status(200).json({ message: 'Post deleted successfully' });
+  } catch (err) {
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 router.post('/create-comment', async (req, res) => {
   console.log(req.body.comment)
   try {

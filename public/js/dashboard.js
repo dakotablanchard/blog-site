@@ -67,5 +67,18 @@ const saveChanges = async (postId) => {
     alert(response.statusText);
   }
 }
+
+const deletePost = async (postId) => {
+  const response = await fetch(`/api/blog-posts/delete-post/${postId}`, {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+  }); 
+
+  if (response.ok) {
+    document.location.reload();
+  } else {
+    alert(response.statusText);
+  }
+}
 document.querySelector('#dashboard').addEventListener('click', goToDashboard)
 document.querySelector('#create-post').addEventListener('click', createPost)
