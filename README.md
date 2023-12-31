@@ -1,4 +1,4 @@
-# blog-site
+# Blog Site
 
 ## Credits
 
