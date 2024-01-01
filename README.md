@@ -19,27 +19,27 @@ Welcome to our simple and intuitive Blog Site, where you can read, create, updat
 
 ## Usage
 
-1. **Read Blog Posts:**
+1. **Homepage:**
    - Visit the site by clicking [here](https://your-blog-site.herokuapp.com/).
    - Browse through the available blog posts on the homepage to discover interesting content.
    - The 'Blog!' icon heading the top left of the navbar doubles as a home button wherever you are on the site.
 
 2. **Create an Account:**
-   - To create your own blog posts, sign up for an account.
+   - To create your own blog posts or comment on other blog posts, sign up for an account.
    - Click on the 'Login/Signup' button in the top right and fill out the Sign Up form.
 
 3. **Write and Manage Blog Posts:**
    - Once logged in, you can create new blog posts, edit your existing ones, or delete your posts from the Dashboard.
-   - You can find your Dashboard by clicking the 'Dashboard' butting in the middle of the navbar at the top of the page.
+   - You can find your Dashboard by clicking the 'Dashboard' button in the middle of the navbar at the top of the page.
 
 4. **Add Comments:**
    - You can easily add comments to any post.
-   - Click on the title of any post to be taken to that posts page.
+   - Click on the title of any post to be taken to that specific posts page.
    - Here you can add your comment below the post.
 
 ## Visit the Site
 
-Explore the Blog Site now: [Your Blog Site URL](https://your-blog-site.herokuapp.com/)
+Explore the Blog Site now: [Click here](https://your-blog-site.herokuapp.com/)
 
 ## Technologies Used
 
