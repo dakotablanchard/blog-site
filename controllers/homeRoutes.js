@@ -12,7 +12,9 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('login');
+  res.render('login', {
+    style: 'login.css'
+  });
 });
 
 router.get('/home', async (req, res) => {
@@ -30,6 +32,7 @@ router.get('/home', async (req, res) => {
     const posts = postData.map((post) => post.get({ plain: true }));
 
     res.render('homepage', {
+      style: 'home.css',
       posts,
       logged_in: req.session.logged_in
     });
@@ -49,6 +52,7 @@ router.get('/dashboard', withAuth,  async (req, res) => {
   const userPosts = userPostData.map(post => post.get({ plain: true }));
 
   res.render('dashboard', {
+    style: 'dashboard.css',
     userPosts,
     logged_in: req.session.logged_in
   })
@@ -79,6 +83,7 @@ router.get('/view-post/:id', withAuth, async (req, res) => {
     console.log(post)
     
     res.render('posts', {
+      style: 'posts.css',
       post,
       logged_in: req.session.logged_in
     });

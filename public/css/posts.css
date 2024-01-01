@@ -1,0 +1,27 @@
+#blog-logo {
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#body-bootstrap-override {
+    background-image: url(../images/blog-background.jpg);
+    background-size: cover;
+}
+
+#post-card {
+    background-color: gray;
+    color: white;
+}
+
+#comment-card {
+    background-color: gray;
+    color: white;
+}
+
+#add-comment-card {
+    background-color: gray;
+    color: white;
+}

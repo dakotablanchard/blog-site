@@ -1,0 +1,25 @@
+#blog-logo {
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#body-bootstrap-override {
+    background-image: url(../images/blog-background.jpg);
+    background-size: cover;
+}
+
+#dash-post-card {
+    background-color: gray;
+    color: white;
+}
+
+#post-h1, #post-h2 {
+    color: white;
+}
+
+label {
+    color: white;
+}

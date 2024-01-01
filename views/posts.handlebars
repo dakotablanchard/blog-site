@@ -1,6 +1,6 @@
-<div class="card mx-auto" style="width: 75rem;">
+<div class="card mx-auto" id="post-card" style="width: 75rem;">
   <div class="card-body">
-    <div class="col-md-5">
+    <div class="row">
       <h2>{{post.title}}</h2>
       <p>{{post.content}}</p>
       <p class="card-subtitle mb-2 text-body-secondary">Posted by: {{post.user.name}}</p>
@@ -10,7 +10,7 @@
 </div>
 
 {{#each post.comments as |comment| }}
-<div class="card mx-auto mt-3" style="width: 75rem;">
+<div class="card mx-auto mt-3" id="comment-card" style="width: 75rem;">
   <div class="card-body">
     <p>{{comment.comment}}</p>
     <p class="card-subtitle mb-2 text-body-secondary">Posted by: {{comment.user.name}}</p>
@@ -21,12 +21,12 @@
 {{/each}}
 
 
-<div class="card mx-auto mt-3" style="width: 75rem;">
+<div class="card mx-auto mt-3" id="add-comment-card" style="width: 75rem;">
   <div class="card-body">
     <form>
       <div class="mb-3">
         <input type="text" class="form-control" id="comment">
-        <button type="submit" class="btn btn-primary mt-3" id="add-comment">Add Comment</button>
+        <button type="submit" class="btn btn-dark mt-3" id="add-comment">Add Comment</button>
     </form>
   </div>
 </div>

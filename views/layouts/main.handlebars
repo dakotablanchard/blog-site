@@ -5,26 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog!</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/{{style}}">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
 </head>
 
-<body>
+<body id="body-bootstrap-override">
     <header>
-        <nav class="navbar bg-body-tertiary">
+        <nav class="navbar" style="background-color:rgba(255, 250, 250, 0.5);">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/home">BLOG!</a>
-                <button class="btn btn-primary" id="dashboard">Dashboard</button>
+                <a class="navbar-brand" id="blog-logo" href="/home">BLOG!</a>
+                <button class="btn btn-dark" id="dashboard">Dashboard</button>
                 {{#if logged_in}}
                 <button class="no-button btn btn-danger" id="logout">Logout</button>
                 {{else}}
-                <button class="btn btn-primary" id="login-navbar">Login/Signup</button>
+                <button class="btn btn-dark" id="login-navbar">Login/Signup</button>
                 {{/if}}
             </div>
         </nav>
     </header>
     <main class="container container-fluid mt-5">
-        <!-- Render the sub layout -->
         {{{ body }}}
     </main>
     <footer>
@@ -35,7 +34,6 @@
     <script src="/js/login.js"></script>
     <script src="/js/dashboard.js"></script>
     <script src="/js/posts.js"></script>
-    <!-- Render script for logged in users only -->
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
     {{/if}}

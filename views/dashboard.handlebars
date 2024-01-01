@@ -1,16 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col-md-7">
-      <h1>Your Posts</h1>
+      <h1 id="post-h1">Your Posts</h1>
       {{#each userPosts as |userPost|}}
-      <div class="card mx-auto mt-3">
+      <div class="card mx-auto mt-3" id="dash-post-card">
         <div class="card-body">
-          <h2><a href="/view-post/{{userPost.id}}" id="post-title-{{userPost.id}}">{{userPost.title}}</a></h2>
+          <h2><a href="/view-post/{{userPost.id}}" class="link-light" id="post-title-{{userPost.id}}">{{userPost.title}}</a></h2>
           <p id="post-content-{{userPost.id}}">{{userPost.content}}</p>
           <p class="card-subtitle mb-2 text-body-secondary">{{format_date userPost.date_created}}
             <button class="btn btn-danger float-end ms-2"
               onclick="deletePost({{userPost.id}})">Delete</button>
-            <button class="btn btn-primary float-end ms-2" id="edit-post"
+            <button class="btn btn-dark float-end ms-2" id="edit-post"
               onclick="editPost({{userPost.id}})">Edit</button>
           </p>
           <button class="btn btn-success save-changes" data-post-id="{{userPost.id}}" style="display: none;"
@@ -23,14 +23,14 @@
     <div class="col-md-5">
       <form>
         <div class="mb-3">
-          <h2>Add Blog Post</h2>
+          <h2 id="post-h2">Add Blog Post</h2>
           <label for="post-title" class="form-label">Title</label>
           <input type="text" class="form-control" id="title">
 
           <label for="new-post" class="form-label">Type a new post!</label>
           <textarea type="text" class="form-control" rows="5" id="content"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary" id="create-post">Create Post</button>
+        <button type="submit" class="btn btn-dark" id="create-post">Create Post</button>
       </form>
     </div>
   </div>
