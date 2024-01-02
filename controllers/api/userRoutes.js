@@ -1,15 +1,17 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-// CREATE new user
+// POST route to create new user
 router.post('/sign-up', async (req, res) => {
   try {
+    // Using data from the request body to create new user in the database
     const dbUserData = await User.create({
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
     });
-// Setting session user_id to the new users id and making the logged_in status true
+
+    // Setting session user_id to the new users id and making the logged_in status true
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
       req.session.logged_in = true;
@@ -21,12 +23,13 @@ router.post('/sign-up', async (req, res) => {
     res.status(500).json(err);
   }
 
-  
+
 });
 
-// Login
+// POST route for logging in
 router.post('/login', async (req, res) => {
   try {
+    // Finding user based off the email they entered
     const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
@@ -36,8 +39,10 @@ router.post('/login', async (req, res) => {
       return;
     }
 
+    // Checking if the password matches the hashed password from the database
     const validPassword = await userData.checkPassword(req.body.password);
 
+    // If password doesn't match, throw an error
     if (!validPassword) {
       res
         .status(400)
@@ -45,6 +50,8 @@ router.post('/login', async (req, res) => {
       return;
     }
 
+    // If the password matches set the session user_id to the current users ID,
+    // AND set the session logged_in status to TRUE
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
@@ -57,7 +64,9 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// POST route for logging out
 router.post('/logout', (req, res) => {
+  // Kill the session
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
@@ -67,4 +76,6 @@ router.post('/logout', (req, res) => {
   }
 });
 
+
+// Export the router
 module.exports = router;
