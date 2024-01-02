@@ -1,7 +1,7 @@
 # Blog Site
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Welcome to our simple and intuitive Blog Site, where you can read, create, update, and delete blog posts.
+Welcome to my simple and intuitive Blog Site, where you can read, create, update, and delete blog posts.
 
 ## Table of Contents
 
@@ -40,6 +40,15 @@ Welcome to our simple and intuitive Blog Site, where you can read, create, updat
 ## Visit the Site
 
 Explore the Blog Site now: [Click here](https://blogs2699-da34bb89b786.herokuapp.com/)
+
+**Homepage**
+![Homepage screenshot](./public/images/homepage.png)
+**Login/Signup**
+![Login page screenshot](./public/images/login.png)
+**Dashboard**
+![Dashboard screenshot](./public/images/dash.png)
+**Posts**
+![Posts page screenshot](./public/images/post.png)
 
 ## Technologies Used
 
