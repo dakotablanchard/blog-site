@@ -1,32 +1,43 @@
+<!-- Card for displaying an individual post -->
 <div class="card mx-auto" id="post-card" style="width: 75rem;">
   <div class="card-body">
     <div class="row">
+      <!-- Post title -->
       <h2>{{post.title}}</h2>
+      <!-- Post content -->
       <p>{{post.content}}</p>
+      <!-- Subtitle showing the author of the post -->
       <p class="card-subtitle mb-2 text-body-secondary">Posted by: {{post.user.name}}</p>
+      <!-- Subtitle showing the formatted post creation date -->
       <p class="card-subtitle mb-2 text-body-secondary">{{format_date post.date_created}}</p>
     </div>
   </div>
 </div>
 
+<!-- Iterate over each comment associated with the post -->
 {{#each post.comments as |comment| }}
-<div class="card mx-auto mt-3" id="comment-card" style="width: 75rem;">
-  <div class="card-body">
-    <p>{{comment.comment}}</p>
-    <p class="card-subtitle mb-2 text-body-secondary">Posted by: {{comment.user.name}}</p>
-    <p class="card-subtitle mb-2 text-body-secondary">{{format_date comment.date_created}}</p>
+  <div class="card mx-auto mt-3" id="comment-card" style="width: 75rem;">
+    <div class="card-body">
+      <!-- Comment content -->
+      <p>{{comment.comment}}</p>
+      <!-- Subtitle showing the author of the comment -->
+      <p class="card-subtitle mb-2 text-body-secondary">Posted by: {{comment.user.name}}</p>
+      <!-- Subtitle showing the formatted comment creation date -->
+      <p class="card-subtitle mb-2 text-body-secondary">{{format_date comment.date_created}}</p>
+    </div>
   </div>
-</div>
-</div>
 {{/each}}
 
-
+<!-- Card for adding a new comment -->
 <div class="card mx-auto mt-3" id="add-comment-card" style="width: 75rem;">
   <div class="card-body">
     <form>
       <div class="mb-3">
+        <!-- Input field for entering the new comment -->
         <input type="text" class="form-control" id="comment">
+        <!-- Button to submit the form and add a new comment -->
         <button type="submit" class="btn btn-dark mt-3" id="add-comment">Add Comment</button>
+      </div>
     </form>
   </div>
 </div>

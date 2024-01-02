@@ -6,34 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog!</title>
     <link rel="stylesheet" href="/css/{{style}}">
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
 </head>
 
 <body id="body-bootstrap-override">
+    <!-- Header Section: Contains navigation bar and site logo -->
     <header>
+        <!-- Navigation bar with a semi-transparent background -->
         <nav class="navbar" style="background-color:rgba(255, 250, 250, 0.5);">
+            <!-- Container for navigation elements -->
             <div class="container-fluid">
+                <!-- Site logo linking to the home page -->
                 <a class="navbar-brand" id="blog-logo" href="/home">BLOG!</a>
+                <!-- Button to navigate to the dashboard -->
                 <button class="btn btn-dark" id="dashboard">Dashboard</button>
+                <!-- Conditional rendering based on user login status -->
                 {{#if logged_in}}
+                <!-- Button to logout if user is logged in -->
                 <button class="no-button btn btn-danger" id="logout">Logout</button>
                 {{else}}
+                <!-- Button to navigate to login/signup page if user is not logged in -->
                 <button class="btn btn-dark" id="login-navbar">Login/Signup</button>
                 {{/if}}
             </div>
         </nav>
     </header>
+
+    <!-- Main Section: Contains the main content of the page -->
     <main class="container container-fluid mt-5">
+        <!-- Dynamically injected content using Handlebars syntax -->
         {{{ body }}}
     </main>
-    <footer>
 
-    </footer>
-
-
+    <!-- Script Section: Includes JavaScript files for client-side functionality -->
     <script src="/js/login.js"></script>
     <script src="/js/dashboard.js"></script>
     <script src="/js/posts.js"></script>
+    <!-- Conditional script inclusion based on user login status -->
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
     {{/if}}
