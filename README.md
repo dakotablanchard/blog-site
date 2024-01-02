@@ -20,7 +20,7 @@ Welcome to our simple and intuitive Blog Site, where you can read, create, updat
 ## Usage
 
 1. **Homepage:**
-   - Visit the site by clicking [here](https://your-blog-site.herokuapp.com/).
+   - Visit the site by clicking [here](https://blogs2699-da34bb89b786.herokuapp.com/).
    - Browse through the available blog posts on the homepage to discover interesting content.
    - The 'Blog!' icon heading the top left of the navbar doubles as a home button wherever you are on the site.
 
@@ -39,7 +39,7 @@ Welcome to our simple and intuitive Blog Site, where you can read, create, updat
 
 ## Visit the Site
 
-Explore the Blog Site now: [Click here](https://your-blog-site.herokuapp.com/)
+Explore the Blog Site now: [Click here](https://blogs2699-da34bb89b786.herokuapp.com/)
 
 ## Technologies Used
 
